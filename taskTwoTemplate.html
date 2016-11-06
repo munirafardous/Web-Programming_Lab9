@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 9 Lab - Task Two</title>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <form name="myForm" action="week9labTask2.php" onsubmit="return validateForm()" method="POST">
+			<h2>Liquid Converter</h2>
+			<table>
+			   <tr>
+				  <td colspan="2">
+					 This form will convert...
+					 <ul>
+						<li>Liters to Gallons or</li>
+						<li>Gallons to Litres</li>
+					 </ul>
+				  </td>
+			   <tr>
+				  <td>Conversion Amount</td>
+				  <td><input type="text" name="convertAmt" id="convertAmt" size="6" maxlength="6"></td>
+			   </tr>
+			   <tr>
+				  <td>Convert To</td>
+				  <td>
+					 <select name="convertTo" id="convertTo">
+						<option value="liters">Liters</option>
+						<option value="gallons">Gallons</option>
+					 </select>
+				  </td>
+			   </tr>
+			</table>
+			<button type="submit" value="Submit">Submit</button>
+			<button type="reset" value="Reset">Reset</button>
+			
+			<script>
+				function validateForm() {
+					var x = document.forms["myForm"]["convertAmt"].value;
+						if ( isNaN(parseFloat(x)) ) {
+							alert("Please enter a valid number.");
+							return false;
+						}
+				}		
+			</script>
+	
+		</form>
+    </body>
+</html>
